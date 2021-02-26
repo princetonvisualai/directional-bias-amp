@@ -1,7 +1,9 @@
 # Metric
-To measure Directional Bias Amplification, use the code in directional_biasamp.py
+Code to replicate [Directional Bias Amplification](https://arxiv.org/abs/2102.12594)
 
-# Replicate Experiments from Directional Bias Amplification Paper
+To measure Directional Bias Amplification, use the metric code in directional_biasamp.py
+
+# Replicate Experiments
 Each of the 7 folders contains the code needed to replicate the experiments: 
 - paint_ex (painting example that creates Figure 2)
 - coco_captioning (investigates equalizer model for Figure 3 examples)
