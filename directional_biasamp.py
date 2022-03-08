@@ -20,6 +20,10 @@ def biasamp_task_to_attribute(task_labels, attribute_labels, attribute_preds, ta
         task_labels_train, attribute_labels_train = task_labels, attribute_labels
     num_t, num_a = task_labels.shape[1], attribute_labels.shape[1]
     
+    # only include images that have attribuate(s) and task(s) associated with it for calculation of indicator variable
+    keep_indices = np.array(list(set(np.where(np.sum(task_labels_train, axis=1)>0)[0]).union(set(np.where(np.sum(task_labels_train, axis=1)>0)[0]))))
+    task_labels_train, attribute_labels_train = task_labels_train[keep_indices], attribute_labels_train[keep_indices]
+    
     # y_at calculation
     p_at = np.zeros((num_a, num_t))
     p_a_p_t = np.zeros((num_a, num_t))
@@ -74,6 +78,10 @@ def biasamp_attribute_to_task(task_labels, attribute_labels, task_preds, task_la
     if task_labels_train is None or attribute_labels_train is None:
         task_labels_train, attribute_labels_train = task_labels, attribute_labels
     num_t, num_a = task_labels.shape[1], attribute_labels.shape[1]
+    
+    # only include images that have attribuate(s) and task(s) associated with it for calculation of indicator variable
+    keep_indices = np.array(list(set(np.where(np.sum(task_labels_train, axis=1)>0)[0]).union(set(np.where(np.sum(task_labels_train, axis=1)>0)[0]))))
+    task_labels_train, attribute_labels_train = task_labels_train[keep_indices], attribute_labels_train[keep_indices]
     
     # y_at calculation
     p_at = np.zeros((num_a, num_t))
