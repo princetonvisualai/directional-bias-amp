@@ -15,15 +15,6 @@ import sys
 sys.path.append('..')
 from utils import bog_task_to_attribute, bog_attribute_to_task
 
-from responsibly.fairness.metrics import (independence_binary,
-                                        separation_binary,
-                                        sufficiency_binary,
-                                        independence_score,
-                                        separation_score,
-                                        sufficiency_score,
-                                        report_binary,
-                                        plot_roc_by_attr)
-
 compas_ds = COMPASDataset()
 
 # two_year_recid as gt, and decile_score is what judges get
