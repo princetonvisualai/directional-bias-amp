@@ -22,3 +22,6 @@ Each folder contains a file, run.sh, that contains the necessary scripts to run.
 - torchvision = 0.5.0
 - responsibly = 0.1.1
 - scipy = 1.4.1
+
+# Other files
+- Data splits are located [here](https://github.com/uclanlp/reducingbias/tree/master/data/COCO)
